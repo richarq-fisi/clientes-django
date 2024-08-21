@@ -1,0 +1,12 @@
+
+/* style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cambia 'Arial' por la fuente que prefieras */
+}
+
+
+th, td{
+    text-align: center;
+    vertical-align: center;
+}
