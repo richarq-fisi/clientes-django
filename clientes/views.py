@@ -7,7 +7,11 @@ def clientes(request):
     clientes = Cliente.objects.all()
     return render(request, "clientes.html", {"clientes": clientes})
 
-def registrarCurso(request):
+def agregarCliente(request):
+    clientes = Cliente.objects.all()
+    return render(request, "agregarCliente.html", {"clientes": clientes})
+
+def registrarCliente(request):
     nombre = request.POST["txtNombre"]
     email = request.POST["txtEmail"]
     telefono = request.POST["txtTelefono"]
@@ -21,7 +25,7 @@ def registrarCurso(request):
     )
     return redirect("/")
 
-def eliminarCurso(request, id):
+def eliminarCliente(request, id):
     try:
         cliente = Cliente.objects.get(id=id)
         cliente.delete()
@@ -29,7 +33,7 @@ def eliminarCurso(request, id):
     except Cliente.DoesNotExist:
         return redirect("/")  # Puedes redirigir a la página principal si el curso no existe
 
-def editarCurso(request, id):
+def editarCliente(request, id):
     cliente = Cliente.objects.get(id=id)
     return render(request, "editarCliente.html", {"cliente": cliente})
 
